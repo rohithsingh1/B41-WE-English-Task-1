@@ -1,0 +1,159 @@
+Objects in javascript
+
+Objects, in JavaScript, is the most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+
+In JavaScript, almost "everything" is an object.
+Booleans can be objects 
+Numbers can be objects 
+Strings can be objects 
+Dates are always objects
+Maths are always objects
+Arrays are always objects
+Functions are always objects
+Objects are always objects
+
+Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+
+Creating a JavaScript Object
+
+ith JavaScript, you can define and create your own objects.
+
+There are different ways to create new objects:
+
+Create a single object, using an object literal.
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+const person = {};
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+Create a single object, with the keyword new.
+
+const person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+Define an object constructor, and then create objects of the constructed type.
+
+const person = {
+  firstName:"John",
+  lastName:"Doe",
+  age:50, eyeColor:"blue"
+}
+
+const x = person;
+x.age = 10;      // Will change both x.age and person.age
+
+
+An example of making use of the Object.create() method is: 
+
+let footballers = {
+	position: "Striker"
+}
+
+let footballer1 = Object.create(footballers);
+
+	// Output : Striker
+console.log(footballer1.position);
+
+
+Accessing Object Members
+
+Object members(properties or methods) can be accessed using the :
+
+dot notation :
+(objectName.memberName)
+
+
+let school = {
+	name : "Vivekanada",
+	location : "Delhi",
+	established : 1971,
+	20 : 1000,
+	displayinfo : function() {
+		console.log(`${school.name} was established
+		in ${school.established} at ${school.location}`);
+	}
+
+}
+
+console.log(school.name);
+
+console.log(school.established);
+
+
+Bracket Notation :
+ objectName["memberName"]
+
+
+let school = {
+	name : "Vivekanada School",
+	location : "Delhi",
+	established : 1995,
+	20 : 1000,
+	displayinfo : function() {
+		document.write(`${school.name} was established
+		in ${school.established} at ${school.location}`);
+	}
+}
+
+// Output : Vivekanada School
+console.log(school['name']);
+
+// Output: 1000
+console.log(school['20']);
+
+
+
+Iterating over all keys of an object
+
+
+let person = {
+	gender : "male"
+}
+
+var person1 = Object.create(person);
+person1.name = "Adam";
+person1.age = 45;
+person1.nationality = "Australian";
+
+for (let key in person1) {
+// Output : name, age, nationality
+// and gender
+	console.log(key);
+}		
+
+
+
+Deleting Properties
+To Delete a property of an object we can make use of the delete operator. An example of its usage has been listed below:
+
+let obj1 = {
+	propfirst : "Name"
+}
+
+// Output : Name
+console.log(obj1.propfirst);
+delete obj1.propfirst
+
+// Output : undefined
+console.log(obj1.propfirst);			
+
+
+
+
+
+
+
